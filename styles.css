@@ -10,17 +10,6 @@ header {
     text-align: center;
 }
 
-figure {
-    display: grid;
-    place-items: center;
-    text-align: center;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
 .media {
     display: flex;
     justify-content: center;
@@ -39,4 +28,8 @@ img {
 video {
     width: 20%;
     border-radius: 10px;
+}
+
+img {
+    filter: grayscale(100%);
 }
