@@ -13,7 +13,7 @@
         <section class="media">
             <img src="hamster.jpg">
             <video controls>
-                <source src="hamster_vid.mp4" type=""video/mp4">
+                <source src="hamster_vid.mp4" type="video/mp4">
             </video>
         </section>
 
@@ -21,8 +21,36 @@
             <h4> This is my hamster, Hammy! He is a very cute gray/white colored Syrian Hamster. He is now two and a half years old, which is roughly eighty-five years old in human years! When he was young, he loved to adventure and explore. He would exercise on his wheel daily for hours a night. Now, he has slowed down a lot and enjoys the slow pace of life. He now spends most his time burrowing and sleeping more. His preferences for food has also changed and he loves eating soft baby food. He has brought so much happiness and joy into my life, I could not imagine a life without him. I am so privileged to watch him grow and live, and I would not trade him for the world.</h4>
             <h5> For the HTML element we haven't talked about in detail, I chose to try out the video element. I found that it was very similar to the image element because of how you have to upload and link to the file within the HTML code, and that they can be organized and aligned with CSS flexbox. I learned that it's a easy and straightforward way of embeding video without needing external plugins, like Flash or Youtube. </h5>
             <h5> For the CSS element we haven't talked about in detail, I chose to try out the filter element, where tried out different effects, such as grayscale, blur, brightness, etc. I learned that it's a fun way to apply visual effects to images and fine-tune images for different visual styles. For example, if you want your website to have a old 1950s style, you can grayscale all your images.</h5>
-            <h5> For the extra credit (additional type of interactivity to your website) I chose to implement the mousemove event,  </h5>
+            <h5> My website fetches data from the Random Dog Image API and generates images of dogs that Hammy would be scared of.</h5>
+        </section>
+
+        <section class="avatar">
+            <h4>Click the button to see a dog that Hammy would be scared of.</h4>
+            <img id="avatarImage" src="" style="display:none;">
+            <button id="fetchAvatarButton">Click to see Dog</button>
+        </section>
+
+        <section class="caption">
+            <h5> For the extra credit (additional type of interactivity to your website) I chose to implement a button that will change the dog image fetched from the Random Dog Images API. </h5>
         </section>
     </main>
+    <script>
+        function fetchAvatar() {
+            const url = 'https://dog.ceo/api/breeds/image/random';
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const avatarImage = document.getElementById('avatarImage');
+                    avatarImage.src = data.message;
+                    avatarImage.style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error fetching dog image:', error);
+                });
+        }
+
+        document.getElementById('fetchAvatarButton').addEventListener('click', fetchAvatar);
+    </script>
 </body>
 </html>

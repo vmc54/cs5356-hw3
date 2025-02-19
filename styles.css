@@ -15,21 +15,50 @@ header {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    flex-wrap: wrap
+    flex-wrap: wrap;
     padding: 20px;
 }
 
 .media img, .media video {
-    width: 30%;
-    max-width: 200px;
+    height: 300px;
     border-radius: 10px;
 }
 
 video {
-    width: 20%;
-    border-radius: 10px;
+    width: auto;
 }
 
 img {
+    width: auto;
     filter: grayscale(100%);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #f4a300;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #e39600;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.avatar img {
+    filter: grayscale(0%);
+    display: none;
+    width: 30%;
+    height: auto;
+    margin-top: 20px;
 }
